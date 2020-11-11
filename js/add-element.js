@@ -16,16 +16,17 @@ $("#one").next().next().text("milk");
 
 // add by clicking the plus sign
 document.getElementById("add").addEventListener("click", addElement);
-$('add').click(addElement);
+$('#add').click(addElement);
 function addElement() {
   // add a new element
       // add a new element
-      $('#todo').append("<li>input type= 'text> </li>")
+      $('#todo').append("<li><input type= 'text'> </li>");
 
-      $('input').blur(funtion(){
+      $('input').blur(function(){
+        var value = $(this).val();
         $(this).parent().addClass('cool');
-        
-      }
+        $(this).parent().text(value);
+      });
 
 }
 
@@ -36,6 +37,8 @@ function changeStyle() {
 if($(this).hasClass('complete')){
   $(this).removeClass('complete');
   $(this).addClass('cool');
+}else{
+  $(this).addClass('complete');
 }
 }
 
